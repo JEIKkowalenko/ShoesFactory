@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesFactory.WEB", "ShoesFa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesFactory.BL", "ShoesFactory.BL\ShoesFactory.BL.csproj", "{EA21A483-F045-43BD-840A-E7137095FF14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesFactory.DL", "ShoesFactory.DL\ShoesFactory.DL.csproj", "{3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesFactory.DAL", "ShoesFactory.DL\ShoesFactory.DAL.csproj", "{3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
