@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EF\FactoryDbInitializer.cs" />
     <Compile Include="EF\ShoesContext.cs" />
     <Compile Include="Entities\Element.cs" />
