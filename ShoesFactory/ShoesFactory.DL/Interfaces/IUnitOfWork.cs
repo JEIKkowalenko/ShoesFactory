@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShoesFactory.DAL.Entities;
 
-namespace ShoesFactory.DL.Interfaces
+namespace ShoesFactory.DAL.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using ShoesFactory.DAL.Entities;
 
 namespace ShoesFactory.DAL.EF
 {
@@ -17,5 +18,7 @@ namespace ShoesFactory.DAL.EF
         {
 
         }
+        public DbSet<Material> Materials { get; set; }
+
     }
 }

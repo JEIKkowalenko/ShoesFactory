@@ -13,5 +13,16 @@ namespace ShoesFactory.DAL.Entities
         public string Summary { get; set; }
         public int Count { get; set; }
         public double Price { get; set; }
+        public Material()
+        {
+
+        }
+        public Material(string name, string summary, int count, double price )
+        {
+            Name = name;
+            Summary = summary;
+            Count = count;
+            Price = price;
+        }
     }
 }

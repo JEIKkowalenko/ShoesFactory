@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoesFactory.DL.Interfaces
+namespace ShoesFactory.DAL.Interfaces
 {
     public interface IRepository<T> where T : class
     {

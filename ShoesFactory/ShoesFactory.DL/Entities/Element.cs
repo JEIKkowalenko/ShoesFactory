@@ -8,6 +8,19 @@ namespace ShoesFactory.DAL.Entities
 {
     public class Element
     {
+        public Element(string name, string summary, IEnumerable<Material> materials, double price)
+        {
+            Name = name;
+            Summary = summary;
+            Materials = materials;
+            Price = price;
+        }
+
+        public Element()
+        {
+            Materials = new List<Material>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Summary { get; set; }
