@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesFactory.BL", "ShoesFactory.BL\ShoesFactory.BL.csproj", "{EA21A483-F045-43BD-840A-E7137095FF14}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C} = {3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesFactory.DAL", "ShoesFactory.DL\ShoesFactory.DAL.csproj", "{3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C}"
 EndProject

@@ -18,7 +18,13 @@ namespace ShoesFactory.DAL.EF
         {
 
         }
+        public DbSet<Employer> Employers { get; set; }
         public DbSet<Material> Materials { get; set; }
+        public DbSet<Sex> Sexes { get; set; }
+        public DbSet<Shoes> Shoes { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Supply> Supplies { get; set; }
+        public DbSet<Сonsignment> Сonsignments { get; set; }
 
     }
 }

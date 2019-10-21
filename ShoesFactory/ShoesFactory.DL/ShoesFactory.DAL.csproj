@@ -7,8 +7,8 @@
     <ProjectGuid>{3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShoesFactory.DL</RootNamespace>
-    <AssemblyName>ShoesFactory.DL</AssemblyName>
+    <RootNamespace>ShoesFactory.DAL</RootNamespace>
+    <AssemblyName>ShoesFactory.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,10 +50,13 @@
   <ItemGroup>
     <Compile Include="EF\FactoryDbInitializer.cs" />
     <Compile Include="EF\ShoesContext.cs" />
-    <Compile Include="Entities\Element.cs" />
     <Compile Include="Entities\Employer.cs" />
     <Compile Include="Entities\Material.cs" />
+    <Compile Include="Entities\Sex.cs" />
     <Compile Include="Entities\Shoes.cs" />
+    <Compile Include="Entities\Сonsignment.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Supply.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

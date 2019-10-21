@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoesFactory.DAL.Entities
+namespace ShoesFactory.BL.DTO
 {
-    public class Element
+    public class ElementDTO
     {
-        public Element(string name, string summary, IEnumerable<Material> materials, double price)
+        public ElementDTO(string name, string summary, IEnumerable<MaterialDTO> materials, double price)
         {
             Name = name;
             Summary = summary;
@@ -16,15 +16,15 @@ namespace ShoesFactory.DAL.Entities
             Price = price;
         }
 
-        public Element()
+        public ElementDTO()
         {
-            Materials = new List<Material>();
+            Materials = new List<MaterialDTO>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Summary { get; set; }
-        public IEnumerable<Material> Materials { get; set; }
+        public IEnumerable<MaterialDTO> Materials { get; set; }
         public double Price { get; set; }
     }
 }

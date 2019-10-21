@@ -8,9 +8,22 @@ namespace ShoesFactory.DAL.Entities
 {
     public class Employer
     {
+        public Employer()
+        {
+        }
+
+        public Employer(string firstName, string lastName, string position)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Position = position;
+            Сonsignments = new List<Сonsignment>();
+        }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public IEnumerable<Shoes> Shoes { get; set; }        
+        public string Position { get; set; }
+        public ICollection<Сonsignment> Сonsignments { get; set; }
     }
 }
