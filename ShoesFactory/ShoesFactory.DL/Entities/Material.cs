@@ -10,20 +10,19 @@ namespace ShoesFactory.DAL.Entities
     {
         public Material()
         {
+            Supplies = new List<Supply>();
         }
 
-        public Material(string name, string summary, int count)
+        public Material(string name, string summary)
         {
             Name = name;
             Summary = summary;
-            Count = count;
             Supplies = new List<Supply>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Summary { get; set; }
-        public int Count { get; set; }
         public ICollection<Supply> Supplies { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace ShoesFactory.DAL.Entities
     {
         public Employer()
         {
+            Сonsignments = new List<Сonsignment>();
         }
 
         public Employer(string firstName, string lastName, string position)

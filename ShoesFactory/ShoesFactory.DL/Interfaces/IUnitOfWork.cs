@@ -11,7 +11,7 @@ namespace ShoesFactory.DAL.Interfaces
     {
         IRepository<Employer> Employers { get; }
         IRepository<Material> Materials { get; }
-        IRepository<Sex> Sexes { get;}
+        IRepository<Size> Sexes { get;}
         IRepository<Shoes> Shoes { get; }
         IRepository<Supplier> Suppliers { get; }
         IRepository<Supply> Supplies { get; }

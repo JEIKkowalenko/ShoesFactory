@@ -10,7 +10,21 @@ namespace ShoesFactory.DAL.EF
 {
     public class ShoesContext : DbContext
     {
+        public DbSet<Composition> Compositions { get; set; }
+        public DbSet<Employer> Employers { get; set; }
+        public DbSet<Material> Materials { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<Shoes> Shoes { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Supply> Supplies { get; set; }
+        public DbSet<Сonsignment> Сonsignments { get; set; }
+        public DbSet<TableOfDimension> TableOfDimensions { get; set; }
         public ShoesContext()
+        {
+            
+        }
+
+        static ShoesContext()
         {
             Database.SetInitializer<ShoesContext>(new ShoesFactoryDbInitializer());
         }
@@ -18,13 +32,6 @@ namespace ShoesFactory.DAL.EF
         {
 
         }
-        public DbSet<Employer> Employers { get; set; }
-        public DbSet<Material> Materials { get; set; }
-        public DbSet<Sex> Sexes { get; set; }
-        public DbSet<Shoes> Shoes { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<Supply> Supplies { get; set; }
-        public DbSet<Сonsignment> Сonsignments { get; set; }
 
     }
 }

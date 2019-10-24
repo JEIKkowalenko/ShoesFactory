@@ -12,15 +12,17 @@ namespace ShoesFactory.DAL.Entities
         {
 
         }
-        public Сonsignment(DateTime date, Shoes shoes,  Employer employer)
+        public Сonsignment(Shoes shoes,  Employer employer, double price)
         {
             Date = DateTime.Now;
             Shoes = shoes;
             Employer = employer;
+            Price = price;
         }
 
         public int Id { get; set; }
         public DateTime Date { get; set; }
+        public double Price { get; set; }
         public int? ShoesId { get; set; }
         public Shoes Shoes { get; set; }
         public int? EmployerId { get; set; }

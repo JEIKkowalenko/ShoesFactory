@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="EF\FactoryDbInitializer.cs" />
     <Compile Include="EF\ShoesContext.cs" />
+    <Compile Include="Entities\Composition.cs" />
     <Compile Include="Entities\Employer.cs" />
     <Compile Include="Entities\Material.cs" />
-    <Compile Include="Entities\Sex.cs" />
+    <Compile Include="Entities\Size.cs" />
     <Compile Include="Entities\Shoes.cs" />
+    <Compile Include="Entities\TableOfDimension.cs" />
     <Compile Include="Entities\Сonsignment.cs" />
     <Compile Include="Entities\Supplier.cs" />
     <Compile Include="Entities\Supply.cs" />
@@ -67,6 +69,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

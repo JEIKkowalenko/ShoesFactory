@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShoesFactory.DAL;
+using ShoesFactory.DAL.EF;
+using ShoesFactory.DAL.Entities;
 using ShoesFactory.DAL.Repositories;
 
 namespace ShoesFactory.WEB.Controllers
@@ -12,9 +14,8 @@ namespace ShoesFactory.WEB.Controllers
     {
         public ActionResult Index()
         {
-            var db = new EFUnitOfWork("Default Connection");           
-            ViewBag.data = db.Materials.GetAll();
-            db.Save();
+            ShoesContext db = new ShoesContext("Default Connection");
+            ViewBag.data =  db.Shoes.Where(e => e.Id == db.TableOfDimensions.Where(k => k.Size.Sex == "male").FirstOrDefault().Id);
             return View();
         }
 

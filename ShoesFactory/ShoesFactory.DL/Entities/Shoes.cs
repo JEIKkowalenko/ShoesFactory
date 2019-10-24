@@ -12,25 +12,22 @@ namespace ShoesFactory.DAL.Entities
         {
             Materials = new List<Material>();
             Сonsignments = new List<Сonsignment>();
+            TablesOfDimensions = new List<TableOfDimension>();
         }
-        public Shoes(int id, string name, string summary, int pairsCount, Sex sex)
+        public Shoes( string name, string summary)
         {
-            Id = id;
             Name = name;
             Summary = summary;
-            PairsCount = pairsCount;
             Materials = new List<Material>();
             Сonsignments = new List<Сonsignment>();
-            //Sex = sex;
+            TablesOfDimensions = new List<TableOfDimension>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Summary { get; set; }       
-        public int PairsCount { get; set; }
         public ICollection<Material> Materials { get; set; }
-        //public int? SexId { get; set; }
-        //public Sex Sex { get; set; }
         public ICollection<Сonsignment> Сonsignments { get; set; }
+        public ICollection<TableOfDimension> TablesOfDimensions { get; set; }
     }
 }

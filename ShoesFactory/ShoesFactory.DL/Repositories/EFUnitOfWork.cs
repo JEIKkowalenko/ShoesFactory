@@ -30,7 +30,7 @@ namespace ShoesFactory.DAL.Repositories
             }
         }
 
-        public IRepository<Sex> Sexes => throw new NotImplementedException();
+        public IRepository<Size> Sexes => throw new NotImplementedException();
 
         public IRepository<Shoes> Shoes => throw new NotImplementedException();
 
