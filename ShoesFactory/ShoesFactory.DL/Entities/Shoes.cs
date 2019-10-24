@@ -21,7 +21,7 @@ namespace ShoesFactory.DAL.Entities
             PairsCount = pairsCount;
             Materials = new List<Material>();
             Сonsignments = new List<Сonsignment>();
-            Sex = sex;
+            //Sex = sex;
         }
 
         public int Id { get; set; }
@@ -29,8 +29,8 @@ namespace ShoesFactory.DAL.Entities
         public string Summary { get; set; }       
         public int PairsCount { get; set; }
         public ICollection<Material> Materials { get; set; }
-        public int? SexId { get; set; }
-        public Sex Sex { get; set; }
+        //public int? SexId { get; set; }
+        //public Sex Sex { get; set; }
         public ICollection<Сonsignment> Сonsignments { get; set; }
     }
 }

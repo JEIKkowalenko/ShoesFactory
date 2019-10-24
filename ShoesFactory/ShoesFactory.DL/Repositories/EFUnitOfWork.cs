@@ -18,28 +18,33 @@ namespace ShoesFactory.DAL.Repositories
         {
             db = new ShoesContext(connectionString);
         }
-        public IRepository<Shoes> Shoes => throw new NotImplementedException();
+        public IRepository<Employer> Employers => throw new NotImplementedException();
 
-        public IRepository<Element> Elements => throw new NotImplementedException();
-
-        public IRepository<Employer> Employers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IRepository<Material> Materials {
+        public IRepository<Material> Materials
+        {
             get
             {
-                if(materialRepository == null)
-                {
-                    materialRepository = new MaterialRepository(db);              
-                }
+                if (materialRepository == null)
+                    materialRepository = new MaterialRepository(db);
                 return materialRepository;
             }
         }
 
+        public IRepository<Sex> Sexes => throw new NotImplementedException();
+
+        public IRepository<Shoes> Shoes => throw new NotImplementedException();
+
+        public IRepository<Supplier> Suppliers => throw new NotImplementedException();
+
+        public IRepository<Supply> Supplies => throw new NotImplementedException();
+
+        public IRepository<Сonsignment> Сonsignments => throw new NotImplementedException();
         public void Save()
         {
             db.SaveChanges();
         }
 
-        private bool disposedValue = false;
+        private bool disposedValue = false;   
 
         protected virtual void Dispose(bool disposing)
         {

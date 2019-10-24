@@ -13,9 +13,9 @@ namespace ShoesFactory.DAL.EF
         protected override void Seed(ShoesContext db)
         {
             db.Materials.Add(new Material("Шкіра", "Звичайна шкіра", 10));
-            db.Employers.Add(new Employer("Петро", "Перший", "Працівник"));
-            db.Sexes.Add(new Sex( "Чоловіча", new List<int>() { 12,11, 10, 9}));
-            db.Shoes.Add();
+            //db.Employers.Add(new Employer("Петро", "Перший", "Працівник"));
+            //db.Sexes.Add(new Sex( "Чоловіча", new List<int>() { 12,11, 10, 9}));
+            //db.Shoes.Add();
             db.SaveChanges();
         }
     }

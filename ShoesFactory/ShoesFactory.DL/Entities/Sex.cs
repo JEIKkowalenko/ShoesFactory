@@ -19,11 +19,11 @@ namespace ShoesFactory.DAL.Entities
         {
             Name = name;
             Sizes = sizes;
-            Shoes = shoes;
+            //Shoes = shoes;
         }
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<int> Sizes { get; set; }
-        public Shoes Shoes { get; set; }
+        //public Shoes Shoes { get; set; }
     }
 }
