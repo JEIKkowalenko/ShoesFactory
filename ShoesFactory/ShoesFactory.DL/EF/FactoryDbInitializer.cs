@@ -12,7 +12,7 @@ namespace ShoesFactory.DAL.EF
     {
         protected override void Seed(ShoesContext db)
         {
-            var supplier = db.Suppliers.Add(new Supplier("Apple corp"));
+            var supplier = db.Suppliers.Add(new Supplier("Apple corp"));          
             var lether = db.Materials.Add(new Material("Lether", "Just lether"));
             db.Supplies.Add(new Supply(supplier, lether, 20));
             var shoes = db.Shoes.Add(new Shoes("Sneakers", "Adidas YUNG-1"));

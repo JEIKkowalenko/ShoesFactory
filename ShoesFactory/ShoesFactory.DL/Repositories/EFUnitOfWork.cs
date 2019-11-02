@@ -13,15 +13,22 @@ namespace ShoesFactory.DAL.Repositories
     {
         private ShoesContext db;
         private MaterialRepository materialRepository;
+        private EmployersRepository employerRepository;
 
         public EFUnitOfWork( string connectionString)
         {
             db = new ShoesContext(connectionString);
         }
-        public IRepository<Employer> Employers => throw new NotImplementedException();
+        public IRepository<Employer> Employers {
+            get
+            {
+                if (employerRepository == null)
+                    employerRepository = new EmployersRepository(db);
+                return employerRepository;
+            }
+        }
 
-        public IRepository<Material> Materials
-        {
+        public IRepository<Material> Materials{
             get
             {
                 if (materialRepository == null)

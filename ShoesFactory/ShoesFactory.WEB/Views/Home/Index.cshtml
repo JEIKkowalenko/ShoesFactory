@@ -12,7 +12,7 @@
 <div class="row">
     @foreach(var x in ViewBag.data)
     {
-        var y = x as Shoes;
+        var y = x as ShoesFactory.DAL.Entities.Shoes;
         <div>@y.Name</div>
     }
 </div>
