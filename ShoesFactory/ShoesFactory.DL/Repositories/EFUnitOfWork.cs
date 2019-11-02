@@ -13,7 +13,14 @@ namespace ShoesFactory.DAL.Repositories
     {
         private ShoesContext db;
         private MaterialRepository materialRepository;
-        private EmployersRepository employerRepository;
+        private CompositionRepository compositionRepository;
+        private EmployerRepository employerRepository;
+        private ShoesRepository shoesRepository;
+        private SizeRepository sizeRepository;
+        private SupplierRepository supplierRepository;
+        private SupplyRepository supplyRepository;
+        private TableOfDimensionRepository tableOfDimensionRepository;
+        private СonsignmentRepository consignmentRepository;
 
         public EFUnitOfWork( string connectionString)
         {
@@ -23,7 +30,7 @@ namespace ShoesFactory.DAL.Repositories
             get
             {
                 if (employerRepository == null)
-                    employerRepository = new EmployersRepository(db);
+                    employerRepository = new EmployerRepository(db);
                 return employerRepository;
             }
         }
@@ -37,15 +44,70 @@ namespace ShoesFactory.DAL.Repositories
             }
         }
 
-        public IRepository<Size> Sexes => throw new NotImplementedException();
+        public IRepository<Size> Sizes {
+            get
+            {
+                if (sizeRepository == null)
+                    sizeRepository = new SizeRepository(db);
+                return sizeRepository;
+            }
+        }
 
-        public IRepository<Shoes> Shoes => throw new NotImplementedException();
+        public IRepository<Shoes> Shoes {
+            get
+            {
+                if (shoesRepository == null)
+                    shoesRepository = new ShoesRepository(db);
+                return shoesRepository;
+            }
+        }
 
-        public IRepository<Supplier> Suppliers => throw new NotImplementedException();
+        public IRepository<Supplier> Suppliers {
+            get
+            {
+                if (supplierRepository == null)
+                    supplierRepository = new SupplierRepository(db);
+                return supplierRepository;
+            }
+        }
 
-        public IRepository<Supply> Supplies => throw new NotImplementedException();
+        public IRepository<Supply> Supplies {
+            get
+            {
+                if (supplyRepository == null)
+                    supplyRepository = new SupplyRepository(db);
+                return supplyRepository;
+            }
+        }
 
-        public IRepository<Сonsignment> Сonsignments => throw new NotImplementedException();
+        public IRepository<Сonsignment> Сonsignments {
+            get
+            {
+                if (consignmentRepository == null)
+                    consignmentRepository = new СonsignmentRepository(db);
+                return consignmentRepository;
+            }
+        }
+
+        public IRepository<Composition> Compositions {
+            get
+            {
+                if (compositionRepository == null)
+                    compositionRepository = new CompositionRepository(db);
+                return compositionRepository;
+            }
+        }
+
+        public IRepository<TableOfDimension> TablesOfDimension
+        {
+            get
+            {
+                if (tableOfDimensionRepository == null)
+                    tableOfDimensionRepository = new TableOfDimensionRepository(db);
+                return tableOfDimensionRepository;
+            }
+        }
+
         public void Save()
         {
             db.SaveChanges();

@@ -14,8 +14,8 @@ namespace ShoesFactory.WEB.Controllers
     {
         public ActionResult Index()
         {
-            ShoesContext db = new ShoesContext("Default Connection");
-            ViewBag.data =  db.Shoes.Where(e => e.Id == db.TableOfDimensions.Where(k => k.Size.Sex == "male").FirstOrDefault().Id);
+            EFUnitOfWork db = new EFUnitOfWork("Default Connection");
+            ViewBag.data = db.Supplies.GetAll();
             return View();
         }
 

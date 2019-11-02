@@ -19,18 +19,21 @@ namespace ShoesFactory.DAL.EF
         public DbSet<Supply> Supplies { get; set; }
         public DbSet<Сonsignment> Сonsignments { get; set; }
         public DbSet<TableOfDimension> TableOfDimensions { get; set; }
+        
+
         public ShoesContext()
         {
-            
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
         static ShoesContext()
         {
+            
             Database.SetInitializer<ShoesContext>(new ShoesFactoryDbInitializer());
         }
         public ShoesContext(string connectionString) : base(connectionString)
         {
-
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
     }

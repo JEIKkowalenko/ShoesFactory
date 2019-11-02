@@ -26,8 +26,8 @@ namespace ShoesFactory.DAL.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Summary { get; set; }       
-        public ICollection<Material> Materials { get; set; }
-        public ICollection<Сonsignment> Сonsignments { get; set; }
-        public ICollection<TableOfDimension> TablesOfDimensions { get; set; }
+        public virtual ICollection<Material> Materials { get; set; }
+        public virtual ICollection<Сonsignment> Сonsignments { get; set; }
+        public virtual ICollection<TableOfDimension> TablesOfDimensions { get; set; }
     }
 }

@@ -63,7 +63,15 @@
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EFUnitOfWork.cs" />
+    <Compile Include="Repositories\EmployerRepository.cs" />
+    <Compile Include="Repositories\ShoesRepository.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\SizeRepository.cs" />
     <Compile Include="Repositories\MaterialRepository.cs" />
+    <Compile Include="Repositories\CompositionRepository.cs" />
+    <Compile Include="Repositories\СonsignmentRepository.cs" />
+    <Compile Include="Repositories\TableOfDimensionRepository.cs" />
+    <Compile Include="Repositories\SupplyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

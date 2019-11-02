@@ -25,9 +25,9 @@ namespace ShoesFactory.DAL.Entities
         public int Count { get; set; }
         public DateTime Date { get; set; }
         public int? SupplierId { get; set; }
-        public Supplier Supplier { get; set; }
+        public virtual Supplier Supplier { get; set; }
         public int? MaterialId { get; set; }
-        public Material Material { get; set; }
+        public virtual Material Material { get; set; }
 
     }
 }

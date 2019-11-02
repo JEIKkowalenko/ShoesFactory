@@ -22,9 +22,9 @@ namespace ShoesFactory.DAL.Entities
         public int Id { get; set; }
         public int Count { get; set; }
         public int? SizeId { get; set; }
-        public Size Size { get; set; }
+        public virtual Size Size { get; set; }
         public int? ShoesId { get; set; }
-        public Shoes Shoes { get; set; }
+        public virtual Shoes Shoes { get; set; }
 
     }
 }

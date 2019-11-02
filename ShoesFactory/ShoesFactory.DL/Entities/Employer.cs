@@ -25,6 +25,6 @@ namespace ShoesFactory.DAL.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Position { get; set; }
-        public ICollection<Сonsignment> Сonsignments { get; set; }
+        public virtual ICollection<Сonsignment> Сonsignments { get; set; }
     }
 }

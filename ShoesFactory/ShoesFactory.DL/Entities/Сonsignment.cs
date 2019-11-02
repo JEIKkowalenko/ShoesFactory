@@ -24,8 +24,8 @@ namespace ShoesFactory.DAL.Entities
         public DateTime Date { get; set; }
         public double Price { get; set; }
         public int? ShoesId { get; set; }
-        public Shoes Shoes { get; set; }
+        public virtual Shoes Shoes { get; set; }
         public int? EmployerId { get; set; }
-        public Employer Employer { get; set; }
+        public virtual Employer Employer { get; set; }
     }
 }

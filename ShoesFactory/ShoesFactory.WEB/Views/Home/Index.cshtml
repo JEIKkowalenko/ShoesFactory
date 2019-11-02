@@ -10,9 +10,10 @@
 </div>
 
 <div class="row">
-    @foreach(var x in ViewBag.data)
+    @foreach (var x in ViewBag.data)
     {
-        var y = x as ShoesFactory.DAL.Entities.Shoes;
-        <div>@y.Name</div>
+        var y = x as ShoesFactory.DAL.Entities.Supply;
+        <div>@y.Material.Name</div>
+        <div>@y.Supplier.Name</div>
     }
 </div>

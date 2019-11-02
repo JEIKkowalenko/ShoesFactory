@@ -22,8 +22,8 @@ namespace ShoesFactory.DAL.Entities
         public int Id { get; set; }
         public int Count { get; set; }
         public int? ShoesId { get; set; }
-        public Shoes Shoes { get; set; }
+        public virtual Shoes Shoes { get; set; }
         public int? MaterialId { get; set; }
-        public Material Material { get; set; }
+        public virtual Material Material { get; set; }
     }
 }

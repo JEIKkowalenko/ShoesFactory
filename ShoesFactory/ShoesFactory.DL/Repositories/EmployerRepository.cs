@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace ShoesFactory.DAL.Repositories
 {
-    public class EmployersRepository : IRepository<Employer>
+    public class EmployerRepository : IRepository<Employer>
     {
         ShoesContext db;
-        public EmployersRepository(ShoesContext context)
+        public EmployerRepository(ShoesContext context)
         {
             db = context;
         }

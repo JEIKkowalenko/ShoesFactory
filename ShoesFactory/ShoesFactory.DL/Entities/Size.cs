@@ -29,7 +29,7 @@ namespace ShoesFactory.DAL.Entities
         public double UK { get; set; }
         public double EU { get; set; }
         public string Sex { get; set; }
-        public ICollection<TableOfDimension> TablesOfDimensions { get; set; }
+        public virtual ICollection<TableOfDimension> TablesOfDimensions { get; set; }
 
     }
 }

@@ -20,6 +20,6 @@ namespace ShoesFactory.DAL.Entities
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Supply> Supplies { get; set; }
+        public virtual ICollection<Supply> Supplies { get; set; }
     }
 }
