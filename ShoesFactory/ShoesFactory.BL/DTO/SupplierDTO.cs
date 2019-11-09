@@ -6,28 +6,24 @@ using System.Threading.Tasks;
 
 namespace ShoesFactory.BLL.DTO
 {
-    public class MaterialDTO
+    public class SupplierDTO
     {
-        public MaterialDTO()
+        public SupplierDTO()
         {
         }
 
-        public MaterialDTO(string name, string summary)
+        public SupplierDTO(string name)
         {
             Name = name;
-            Summary = summary;
         }
 
-        public MaterialDTO(int id, string name, string summary)
+        public SupplierDTO(int id, string name)
         {
             Id = id;
             Name = name;
-            Summary = summary;
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Summary { get; set; }
-        public int Count { get; set; }
     }
 }

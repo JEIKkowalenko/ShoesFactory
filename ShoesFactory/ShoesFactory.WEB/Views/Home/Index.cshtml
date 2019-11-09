@@ -10,10 +10,14 @@
 </div>
 
 <div class="row">
-    @foreach (var x in ViewBag.data)
-    {
-        var y = x as ShoesFactory.DAL.Entities.Supply;
-        <div>@y.Material.Name</div>
-        <div>@y.Supplier.Name</div>
+
+    @{
+        var y = ViewBag.data as IEnumerable<ShoesFactory.BLL.DTO.SupplyDTO>;
     }
+    @foreach (var x in y)
+    {
+        <div>@x.Id</div>
+    }
+
+
 </div>

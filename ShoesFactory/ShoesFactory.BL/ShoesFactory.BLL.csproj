@@ -7,8 +7,8 @@
     <ProjectGuid>{EA21A483-F045-43BD-840A-E7137095FF14}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShoesFactory.BL</RootNamespace>
-    <AssemblyName>ShoesFactory.BL</AssemblyName>
+    <RootNamespace>ShoesFactory.BLL</RootNamespace>
+    <AssemblyName>ShoesFactory.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,15 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\ElementDTO.cs" />
     <Compile Include="DTO\MaterialDTO.cs" />
-    <Compile Include="Interfaces\IMaterialsService.cs" />
+    <Compile Include="DTO\SupplierDTO.cs" />
+    <Compile Include="DTO\SupplyDTO.cs" />
+    <Compile Include="Infrastucture\ValidationException.cs" />
+    <Compile Include="Interfaces\ISupplyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\MaterialService.cs" />
+    <Compile Include="Services\SupplyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessModels\" />
-    <Folder Include="Infrastucture\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

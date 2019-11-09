@@ -191,6 +191,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShoesFactory.BL\ShoesFactory.BLL.csproj">
+      <Project>{EA21A483-F045-43BD-840A-E7137095FF14}</Project>
+      <Name>ShoesFactory.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShoesFactory.DL\ShoesFactory.DAL.csproj">
       <Project>{3772FA5A-AC7C-4ECA-B0F4-D2D2A0C5153C}</Project>
       <Name>ShoesFactory.DAL</Name>
