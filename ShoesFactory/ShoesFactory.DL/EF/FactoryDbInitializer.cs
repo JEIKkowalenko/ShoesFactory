@@ -14,7 +14,7 @@ namespace ShoesFactory.DAL.EF
         {
             var supplier = db.Suppliers.Add(new Supplier("Apple corp"));          
             var lether = db.Materials.Add(new Material("Lether", "Just lether"));
-            db.Supplies.Add(new Supply(supplier, lether, 20));
+            db.Supplies.Add(new Supply(supplier, lether, 0, 12.5));
             var shoes = db.Shoes.Add(new Shoes("Sneakers", "Adidas YUNG-1"));
             db.Compositions.Add(new Composition(10, shoes, lether));
             var size = db.Sizes.Add(new Size(11, 10, 44, "male"));

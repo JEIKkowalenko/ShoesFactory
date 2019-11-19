@@ -9,7 +9,7 @@ namespace ShoesFactory.BLL.Interfaces
 {
     public interface ISupplyService
     {
-        void AddSupply(string materialName, string supplierName, int materialCount, double price);
+        void AddSupply(MaterialDTO material, string supplierName, int materialCount, double price);
         SupplyDTO GetSupply(int? id);
         IEnumerable<SupplyDTO> GetAllSupplies();
         void Dispose();

@@ -12,7 +12,7 @@ using AutoMapper;
 
 namespace ShoesFactory.BLL.Services
 {
-    public class SupplyService 
+    public class SupplyService : ISupplyService
     {
         IUnitOfWork Database { get; set; }
         public SupplyService(IUnitOfWork iuow)
@@ -22,7 +22,7 @@ namespace ShoesFactory.BLL.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Database.Dispose();
         }
 
         public void AddSupply(MaterialDTO material, string supplierName, int materialCount, double price)
@@ -55,7 +55,7 @@ namespace ShoesFactory.BLL.Services
                 newSupplier = oldSupplier;
             }
 
-            Database.Supplies.Create(new Supply(newSupplier,newMaterial, materialCount));
+            Database.Supplies.Create(new Supply(newSupplier,newMaterial, materialCount, price));
             Database.Save();
         }
 

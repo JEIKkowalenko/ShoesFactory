@@ -20,24 +20,9 @@ namespace ShoesFactory.WEB.Controllers
         {
             EFUnitOfWork db = new EFUnitOfWork("Default Connection");
             SupplyService supplyService = new SupplyService(db);
-            //убрать в конструкторі кількість матеріалу, бо двічі кількість 
             supplyService.AddSupply(new MaterialDTO("Lether", "дупа"), "Apple corp",20, 14.3);
-            supplyService.AddSupply(new MaterialDTO("Lether", "дупа"), "Apple corp", 20, 14.3);
+            supplyService.AddSupply(new MaterialDTO("Lether", "дупа"), "Apple corp", 20, 15.3);
             ViewBag.data = supplyService.GetAllSupplies();
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

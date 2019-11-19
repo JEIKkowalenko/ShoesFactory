@@ -11,6 +11,14 @@ namespace ShoesFactory.BLL.DTO
         public SupplyDTO()
         {
         }
+        public SupplyDTO(double price, int count, DateTime date, int? supplierId, int? materialId)
+        {
+            Price = price;
+            Count = count;
+            Date = date;
+            SupplierId = supplierId;
+            MaterialId = materialId;
+        }
 
         public SupplyDTO(int count, DateTime date, int? supplierId, int? materialId)
         {
@@ -31,6 +39,7 @@ namespace ShoesFactory.BLL.DTO
 
         public int Id { get; set; }
         public int Count { get; set; }
+        public double Price { get; set; }
         public DateTime Date { get; set; }
         public int? SupplierId { get; set; }
         public int? MaterialId { get; set; }
