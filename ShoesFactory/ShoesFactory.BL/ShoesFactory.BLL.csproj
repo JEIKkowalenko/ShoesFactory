@@ -54,6 +54,7 @@
     <Compile Include="Infrastucture\ValidationException.cs" />
     <Compile Include="Interfaces\ISupplyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ShoesService.cs" />
     <Compile Include="Services\SupplyService.cs" />
   </ItemGroup>
   <ItemGroup>
