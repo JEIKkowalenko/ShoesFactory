@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ShoesFactory.WEB.Models
 {
-    public class SupplierDTO
+    public class SupplierViewModel
     {
-        public SupplierDTO()
+        public SupplierViewModel()
         {
         }
 
-        public SupplierDTO(string name)
+        public SupplierViewModel(string name)
         {
             Name = name;
         }
 
-        public SupplierDTO(int id, string name)
+        public SupplierViewModel(int id, string name)
         {
             Id = id;
             Name = name;

@@ -31,6 +31,20 @@
         });
     });
 
+    $('.updateSupplier').click(function () {
+        var x = $('tr').has(this).children().first().text();
+        $.ajax({
+            url: '/ShoesFactory/GetSupplier',
+            data: { id: x },
+            dataType: "json",
+            type: "GET",
+            success: function (result) {
+                $('input[name="Id"]').val(result.Id);
+                $('input[name="Name"]').val(result.Name);
+            }
+        });
+    });
+
     $('.deleteButton').click(function () {
         var x = $('tr').has(this).children().first().text();
         $('#deleteId').val(x);

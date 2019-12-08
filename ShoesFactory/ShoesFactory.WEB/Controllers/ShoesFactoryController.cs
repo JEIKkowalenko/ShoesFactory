@@ -74,5 +74,36 @@ namespace ShoesFactory.WEB.Controllers
             var jsondata = material;
             return Json(jsondata, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Suppliers()
+        {
+            IEnumerable<SupplierDTO> supplierDtos = supplyService.GetAllSuppliers();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<SupplierDTO, SupplierViewModel>()).CreateMapper();
+            var suppliers = mapper.Map<IEnumerable<SupplierDTO>, List<SupplierViewModel>>(supplierDtos);
+            return View(suppliers);
+        }
+        public ActionResult AddSupplier(SupplierViewModel supplier)
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<SupplierViewModel, SupplierDTO>()).CreateMapper();
+            var newSupplier = mapper.Map<SupplierViewModel, SupplierDTO>(supplier);
+            supplyService.AddSupplier(newSupplier);
+            return RedirectToAction("Suppliers");
+        }
+        [HttpGet]
+        public ActionResult DeleteSupplier(int id)
+        {
+            supplyService.DeleteSupplier(id);
+            var x = supplyService.GetAllSuppliers();
+            return RedirectToAction("Suppliers");
+        }
+
+        [HttpGet]
+        public JsonResult GetSupplier(int id)
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<SupplierDTO, SupplierViewModel>()).CreateMapper();
+            var supplier = mapper.Map<SupplierDTO, SupplierViewModel>(supplyService.GetSupplier(id));
+            var jsondata = supplier;
+            return Json(jsondata, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -131,5 +131,42 @@ namespace ShoesFactory.BLL.Services
             Database.Materials.Delete(id);
             Database.Save();
         }
+
+        public IEnumerable<SupplierDTO> GetAllSuppliers()
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Supplier, SupplierDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<Supplier>, List<SupplierDTO>>(Database.Suppliers.GetAll());
+        }
+        public SupplierDTO GetSupplier(int? id)
+        {
+            if (id == null)
+                throw new ValidationException("Id is empty", "");
+            var supplier = Database.Suppliers.Get(id.Value);
+            if (supplier == null)
+                throw new ValidationException("Supply not found", "");
+
+            return new SupplierDTO() { Id = supplier.Id, Name = supplier.Name};
+        }
+        public void AddSupplier(SupplierDTO supplier)
+        {
+            Supplier oldsupplier = Database.Suppliers.Get(supplier.Id);
+            if (oldsupplier != null)
+            {
+                oldsupplier.Name = supplier.Name;
+                Database.Suppliers.Update(oldsupplier);
+                Database.Save();
+            }
+            else
+            {
+                Database.Suppliers.Create(new Supplier() { Name = supplier.Name});
+                Database.Save();
+            }
+
+        }
+        public void DeleteSupplier(int id)
+        {
+            Database.Suppliers.Delete(id);
+            Database.Save();
+        }
     }
 }
