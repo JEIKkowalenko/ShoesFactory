@@ -35,6 +35,5 @@ namespace ShoesFactory.DAL.EF
         {
             this.Configuration.LazyLoadingEnabled = true;
         }
-
     }
 }

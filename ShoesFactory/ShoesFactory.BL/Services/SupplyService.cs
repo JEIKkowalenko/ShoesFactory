@@ -67,13 +67,69 @@ namespace ShoesFactory.BLL.Services
             if (supply == null)
                 throw new ValidationException("Supply not found", "");
 
-            return new SupplyDTO (supply.Count, supply.Date, supply.SupplierId, supply.MaterialId);
+            return new SupplyDTO ( supply.Id, supply.Count, supply.Date, supply.SupplierId, supply.MaterialId);
         }
 
         public IEnumerable<SupplyDTO> GetAllSupplies()
         {
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Supply, SupplyDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<Supply>, List<SupplyDTO>>(Database.Supplies.GetAll());
+        }
+
+        public void DeleteSupply(int id)
+        {
+            Database.Supplies.Delete(id);
+            Database.Save();
+        }
+
+        public IEnumerable<MaterialDTO> GetAllMaterials()
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Material, MaterialDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<Material>, List<MaterialDTO>>(Database.Materials.GetAll());
+        }
+        public MaterialDTO GetMaterial(int? id)
+        {
+            if (id == null)
+                throw new ValidationException("Id is empty", "");
+            var material = Database.Materials.Get(id.Value);
+            if (material == null)
+                throw new ValidationException("Supply not found", "");
+
+            return new MaterialDTO() {  Id = material.Id, Count = material.Count, Name = material.Name, Summary = material.Summary};
+        }
+        public void AddMaterial(MaterialDTO material)
+        {
+            Material oldMaterial = Database.Materials.Get(material.Id);
+            if(oldMaterial != null)
+            {
+                oldMaterial.Name = material.Name;
+                oldMaterial.Summary = material.Summary;
+                oldMaterial.Count = material.Count;
+                Database.Materials.Update(oldMaterial);
+                Database.Save();
+            }
+            else
+            {
+                Database.Materials.Create(new Material(material.Id, material.Name, material.Summary, material.Count));
+                Database.Save();
+            }
+            
+        }
+
+        public void UpdateMaterial(MaterialDTO newMaterial)
+        {
+            var oldMaterial = Database.Materials.Get(newMaterial.Id);
+            if(oldMaterial != null)
+            {
+                Database.Materials.Update(new Material(newMaterial.Name, newMaterial.Summary, newMaterial.Count));
+                Database.Save();
+            }
+            
+        }
+        public void DeleteMaterial(int id)
+        {
+            Database.Materials.Delete(id);
+            Database.Save();
         }
     }
 }

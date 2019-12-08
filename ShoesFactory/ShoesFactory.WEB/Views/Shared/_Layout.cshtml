@@ -11,32 +11,103 @@
 <body>
     
     <div class="container body-content">
-=
-            <div class="col-md-10">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/ShoesFactory/Materials">Матеріали</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-            </div>
+        @if (ViewBag.Title != "Begin")
+        {
+            switch (ViewBag.Title)
+            {
+                case "Supplies":
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Materials">Матеріали</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/ShoesFactory/Supplies">Поставки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="/ShoesFactory/Suppliers">Поставники</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Shoes">Моделі взуття</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Consigment">Партії</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Employers">Працівники</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    break;
+
+                case "Materials":
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/ShoesFactory/Materials">Матеріали</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="/ShoesFactory/Supplies">Поставки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Suppliers">Поставники</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Shoes">Моделі взуття</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Consigment">Партії</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Employers">Працівники</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    break;
+
+                case "Suppliers":
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Materials">Матеріали</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="/ShoesFactory/Supplies">Поставки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/ShoesFactory/Suppliers">Поставники</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Shoes">Моделі взуття</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Consigment">Партії</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ShoesFactory/Employers">Працівники</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    break;
+            }
+
+        }
+
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/MyScript.js"></script>
 </body>
 </html>

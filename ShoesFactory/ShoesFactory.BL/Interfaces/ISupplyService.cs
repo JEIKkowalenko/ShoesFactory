@@ -12,6 +12,12 @@ namespace ShoesFactory.BLL.Interfaces
         void AddSupply(MaterialDTO material, string supplierName, int materialCount, double price);
         SupplyDTO GetSupply(int? id);
         IEnumerable<SupplyDTO> GetAllSupplies();
+        void DeleteSupply(int id);
+        void AddMaterial(MaterialDTO material);
+        MaterialDTO GetMaterial(int? id);
+        IEnumerable<MaterialDTO> GetAllMaterials();
+        void DeleteMaterial(int id);
+        void UpdateMaterial(MaterialDTO material);
         void Dispose();
     }
 }

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ShoesFactory.WEB.Models.MaterialViewModel>
+@using ShoesFactory.WEB.Models;
+@using ShoesFactory.BLL.Services;
+@{
+    ViewBag.Title = "Materials";
+}
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Редагування</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/ShoesFactory/AddMaterial" method="post" id="editForm">
+                    <input type="hidden" name="Id" value="" />
+                    <div class="form-group row">
+                        <label for="MaterialName" class="col-sm-2 col-form-label">Назва</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="MaterialName" name="Name" value="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Summary" class="col-sm-2 col-form-label">Опис</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Summary" name="Summary" value="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Count" class="col-sm-2 col-form-label">Кількість</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="Count" name="Count" value="" placeholder="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button form="editForm" class="btn btn-primary" type="submit">Добре</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Відмінити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Видалити запис?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/ShoesFactory/DeleteMaterial" method="get" id="deleteMaterial">
+                    <input type="hidden" name="id" value="" id="deleteId" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button form="deleteMaterial" class="btn btn-primary" type="submit" id="DeleteAprove">Так</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ні</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover border-bottom">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Назва</th>
+                    <th scope="col">Опис</th>
+                    <th scope="col">Кількість</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+
+            <tbody class="">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <td class="id">@item.Name</td>
+                        <td>@item.Summary</td>
+                        <td>@item.Count</td>
+                        <td class="text-right pr-0">
+                            <a class="btn btn-success mr-2 updateMaterial" href="#" role="button" data-toggle="modal" data-target="#exampleModal" id="">Редагувати</a>
+                            <a class="btn btn-danger deleteButton" href="#" role="button" data-toggle="modal" data-target="#exampleModal1">Видалити</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <div class="text-right">
+            <a class="btn btn-primary px-3" href="#" role="button" data-toggle="modal" data-target="#exampleModal" id="addButton">Додати</a>
+        </div>
+    </div>
+</div>
